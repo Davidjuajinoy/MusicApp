@@ -1,0 +1,85 @@
+@use "../abstracts/index" as *;
+
+.sidebar {
+  height: 100vh;
+  color: getColor("white");
+  width: 75vw;
+  padding: 1rem;
+  background-color: getColor("black-100");
+  position: absolute;
+  transition: transform getAnimation("sidebar") ease-out;
+  &__close {
+    @include dFlex(row, wrap, center, center);
+    gap: 10px;
+    padding: 1rem 0;
+    &-title {
+      font-size: getSize("3");
+
+      /* Efect typing */
+      position: relative;
+      overflow: hidden;
+      &::after{
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: getColor("black-100");
+        border-left: 2px solid getColor("white");
+        left: 0;
+        animation: typing 1.5s steps(15) infinite;
+      }
+          /* Efect typing */
+    }
+    &-icon {
+      order: 1;
+      font-size: getSize("3");
+      box-shadow: getShadow("2");
+      border-radius: 50%;
+      background-color: getColor("black-100");
+      cursor: pointer;
+    }
+  }
+  &__separator {
+    width: 100%;
+    height: 2px;
+    background-color: getColor("black-50");
+  }
+
+  &__wrapper {
+    @include dFlex(row, wrap, flex-start, center);
+    padding: 1rem 0;
+    gap: 1rem;
+
+    & .uil {
+      font-size: getSize("3");
+    }
+  }
+
+  &__toggle {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    padding: 0.5rem;
+    color: getColor("white");
+    opacity: 0;
+    transition: opacity getAnimation("btn-toggle") ease-in-out;
+  }
+}
+
+#check {
+  display: none;
+  &:checked ~ .sidebar {
+    transform: translateX(-75vw);
+    transition: transform getAnimation("sidebar") ease-in-out;
+  }
+  &:checked ~ label > i {
+    opacity: 1;
+    transition: opacity getAnimation("btn-toggle") ease-in;
+  }
+}
+
+@keyframes typing {
+  100%{
+    transform: translateX(120%);
+  }
+}

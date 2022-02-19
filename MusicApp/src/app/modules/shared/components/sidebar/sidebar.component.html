@@ -1,0 +1,44 @@
+<input type="checkbox" name="check" id="check" checked >
+<label for="check">
+    <i class="uil uil-bars sidebar__close-icon sidebar__toggle"></i>
+</label>
+
+<div class="sidebar">
+    <div class="sidebar__close">
+        <span class="sidebar__close-title">{{ title}}</span>
+        <label for="check">
+            <i class="uil uil-times sidebar__close-icon"></i>
+        </label>
+    </div>
+
+    <ul class="sidebar__list">
+        <li *ngFor="let menuDefault  of mainMenu.defaultOptions">
+            <div class="sidebar__wrapper">
+                <i [ngClass]="['uil',menuDefault.icon]"></i>
+                <span class="sidebar__label">{{menuDefault.name}}</span>
+            </div>
+        </li>
+    </ul>
+
+    <ul class="sidebar__list">
+        <li *ngFor="let mainAccessLink  of mainMenu.accessLink">
+            <div class="sidebar__wrapper">
+                <i [ngClass]="['uil',mainAccessLink.icon]"></i>
+                <span class="sidebar__label">{{mainAccessLink.name}}</span>
+            </div>
+        </li>
+        <hr class="sidebar__separator">
+    </ul>
+
+
+    <ul class="sidebar__list">
+        <li *ngFor="let custom  of customOptions">
+            <div class="sidebar__wrapper">
+                <span class="sidebar__label">{{custom.name}}</span>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+

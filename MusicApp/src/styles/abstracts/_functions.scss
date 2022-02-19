@@ -1,0 +1,43 @@
+@use 'variables' as *;
+
+@function getColor($key){
+    @if map-has-key($colors, $key ) {
+        @return map-get($colors, $key);
+    }
+    @error('no existe ese valor en #{$colors}');
+}
+
+@function getSize($key){
+    @if map-has-key($font-size, $key ) {
+        @return map-get($font-size, $key);
+    }
+    @error('no existe ese valor en #{$font-size}');
+}
+
+@function getSize($key){
+    @if map-has-key($font-size, $key ) {
+        @return map-get($font-size, $key);
+    }
+    @error('no existe ese valor en #{$font-size}');
+}
+
+
+@function getRadius($key){
+    @if map-has-key($border-radius, $key ) {
+        @return map-get($border-radius, $key);
+    }
+    @error('no existe ese valor en #{$border-radius}');
+}
+
+@function getShadow($key){
+    @if map-has-key($shadow, $key ) {
+        @return map-get($shadow, $key);
+    }
+    @error('no existe ese valor en #{$shadow}');
+}
+@function getAnimation($key){
+    @if map-has-key($animations, $key ) {
+        @return map-get($animations, $key);
+    }
+    @error('no existe ese valor en #{$animations}');
+}

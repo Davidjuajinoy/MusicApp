@@ -1,0 +1,29 @@
+@use 'styles/abstracts/index' as *;
+
+@use 'styles/vendors/normalize';
+
+@use 'styles/base/index' as base;
+
+
+@use 'styles/layout/index' as layout;
+@use 'styles/pages/index' as pages;
+
+// @use 'styles/';
+// @use '';
+
+/* 7-1 sin themes
+? ABSTRACTS | Helpers | utilities'
+    *cosas que no estan compiladas en css por ejemplo (_breakpoints,_colors,_functions,_mixin,_type, _variables , _index)
+? Base
+    *estilos generales que afectan globalmente los elementos. (_base, _reset, _font-face,_typography,_root)
+? Components
+    *cosas reutilizables  (_buttons, _articles , _nav)
+? Layout
+    *Tiene que ver con la distribucion de la app (_grid.scss, _header.scss, _footer.scss, _sidebar.scss, _forms.scss, _navigation.scss)
+? Pages
+    *Si tienes estilos específicos para cada página, es mejor ponerlos en una carpeta pages/ (_home.scss, _contact.scss)    
+
+? Vendors 
+    *Todos los archivos procedentes de librerias externas (Normalize, bootstrap, jquery, etc)
+    *Si se quiere sobrescribir una sección de cualquier vendor, te recomiendo que tengas una octava carpeta llamada vendors-extensions/ en la que puedes poner estos archivos usando el mismo nombre que le ha dado el desarrollador (vendors-extensions/_bootstrap.scss).
+    */

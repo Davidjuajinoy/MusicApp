@@ -1,0 +1,53 @@
+$font-family: "Poppins", sans-serif;
+
+$font-size: (
+  "1": 1rem,
+  "2": 1.2rem,
+  "3": 1.8rem,
+  "4": 2rem,
+  "5": 2.4rem,
+  "6": 3rem,
+);
+
+$border-radius: (
+  "1": 0.25rem,
+  "2": 0.5rem,
+  "3": 50%,
+);
+
+$shadow: (
+  "1": rgb(0 0 0 / 35%) 0px 8px 24px,
+  "2": rgba(100, 100, 111, 0.2) 0px 7px 29px 0px,
+);
+
+$colors: (
+  "white": #ffffff,
+  "green": #1db954,
+  "black-100": hsl(0, 0%, 0%),
+  "black-50": #323232,
+  "black-75": #181818,
+);
+
+$animations: (
+  "sidebar": 1s,
+  "btn-toggle": 2s,
+);
+
+// $type-scale: (
+//   small: (
+//     300: 1rem,
+//     400: 1.125rem,
+//     500: 1.563rem,
+//     600: 1.953rem,
+//     700: 2.441rem,
+//     800: 3.052rem
+//   ),
+//   large: (
+//     300: 1rem,
+//     400: 1.425rem,
+//     500: 2rem,
+//     600: 2.827rem,
+//     700: 4rem,
+//     800: 5.653rem
+//   ),
+// );
