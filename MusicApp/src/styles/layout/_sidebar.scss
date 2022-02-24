@@ -1,12 +1,13 @@
 @use "../abstracts/index" as *;
 
 .sidebar {
-  height: 100vh;
+  height: 100%;
   color: getColor("white");
   width: 75vw;
   padding: 1rem;
   background-color: getColor("black-100");
-  position: absolute;
+  position: fixed;
+  z-index: 10;
   transition: transform getAnimation("sidebar") ease-out;
   &__close {
     @include dFlex(row, wrap, center, center);
@@ -21,6 +22,7 @@
       &::after{
         content: "";
         position: absolute;
+        z-index: 1;
         height: 100%;
         width: 100%;
         background-color: getColor("black-100");
@@ -56,12 +58,13 @@
   }
 
   &__toggle {
-    position: absolute;
+    position: fixed;
     left: 1rem;
     top: 1rem;
     padding: 0.5rem;
     color: getColor("white");
     opacity: 0;
+    z-index: 5;
     transition: opacity getAnimation("btn-toggle") ease-in-out;
   }
 }
@@ -76,6 +79,7 @@
     opacity: 1;
     transition: opacity getAnimation("btn-toggle") ease-in;
   }
+
 }
 
 @keyframes typing {

@@ -5,7 +5,7 @@
 
 <div class="sidebar">
     <div class="sidebar__close">
-        <span class="sidebar__close-title">{{ title}}</span>
+        <span class="sidebar__close-title"><i class="uil uil-music"></i> {{ title}}</span>
         <label for="check">
             <i class="uil uil-times sidebar__close-icon"></i>
         </label>
@@ -13,9 +13,9 @@
 
     <ul class="sidebar__list">
         <li *ngFor="let menuDefault  of mainMenu.defaultOptions">
-            <div class="sidebar__wrapper">
+            <div class="sidebar__wrapper" [routerLink]="menuDefault.router" routerLinkActive="">
                 <i [ngClass]="['uil',menuDefault.icon]"></i>
-                <span class="sidebar__label">{{menuDefault.name}}</span>
+                <span   class="sidebar__label">{{menuDefault.name}}</span>
             </div>
         </li>
     </ul>

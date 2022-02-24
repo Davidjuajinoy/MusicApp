@@ -1,6 +1,8 @@
 $font-family: "Poppins", sans-serif;
 
 $font-size: (
+  "-1": .7rem,
+  "0": .8rem,
   "1": 1rem,
   "2": 1.2rem,
   "3": 1.8rem,
@@ -12,7 +14,10 @@ $font-size: (
 $border-radius: (
   "1": 0.25rem,
   "2": 0.5rem,
-  "3": 50%,
+  "3": 0.75rem,
+  "4": 1rem,
+  "circle": 50%,
+  "icon": 1.5rem 0px 1.5rem 1.5rem
 );
 
 $shadow: (

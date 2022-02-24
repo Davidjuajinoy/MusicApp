@@ -1,0 +1,73 @@
+@use "../abstracts/index" as *;
+
+.card-player {
+  width: 100%;
+  background-color: getColor("black-50");
+  border-radius: getRadius('1');
+  height: 100%;
+  position: relative;
+  color: getColor("white");
+  &__cover {
+    max-width: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &--small {
+    @include dFlex(column, wrap, center, center);
+    gap: 1rem;
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    font-size: getSize("1");
+    @include dFlex(row,wrap,center,center);
+    padding: 0 1rem;
+    gap: .5rem;
+  }
+
+  &__title{
+    font-size: getSize("1");
+  }
+
+  &__subtitle{
+    font-size: getSize("0");
+    opacity: .7;
+  }
+
+  &--big {
+    @include dFlex(column, wrap, center, center);
+    gap: 1rem;
+  }
+
+}
+
+
+
+.uil-play {
+  position: absolute;
+  background-color: getColor("green");
+  border-radius: getRadius("circle");
+  top: 50%;
+  right: 0;
+  font-size: getSize("3");
+  object-fit: cover;
+  padding: 0.4rem;
+  color: getColor("white");
+}
+
+.uil-play:hover {
+  animation: scale 2s ease-in infinite;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

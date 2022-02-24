@@ -1,6 +1,5 @@
 @use '../abstracts/index' as *;
 
-
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +12,7 @@ body{
     font-size: map-get($font-size,"1");
     max-width: 100vw;
     max-height: 100vh;
+    background-color: getColor("black-75");
 }
 
 

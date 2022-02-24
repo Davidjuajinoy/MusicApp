@@ -1,0 +1,112 @@
+@use "../abstracts/index" as *;
+
+.media-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 4;
+  height: 20vh;
+  background-color: getColor("black-75");
+  border-top: 1px solid getColor("black-50");
+  &__wrapper {
+    @include dGrid(3, 0, 2);
+    height: 100%;
+    grid-template-areas:
+      "artist artist artist"
+      "media media audio";
+  }
+
+  &__artist-center {
+    grid-area: artist;
+  }
+
+  &__artist {
+    &-track {
+      @include dFlex(row, wrap, space-around, center);
+      height: 100%;
+      width: 100%;
+    }
+    &-cover {
+      max-width: 100%;
+      width: 40px;
+    }
+    &-info {
+      color: getColor("white");
+      @include dFlex(column, wrap, center, center);
+    }
+    &-title {
+      font-size: getSize("0");
+    }
+    &-subtitle {
+      font-size: getSize("-1");
+      opacity: 0.7;
+    }
+  }
+
+  &__controls {
+    grid-area: media;
+    padding: 0 1rem ;
+
+    &-buttons{
+        @include dFlex(row,wrap,center,center);
+        height:100%;
+        width: 100%;
+        margin-bottom: .5rem;
+    }
+    
+    .arrow-btn, .play-btn{
+        font-size: getSize("3");
+        background-color: transparent;
+        color: getColor("white");
+        
+    }
+  }
+
+  &__time {
+    color: getColor("white");
+    font-size: getSize("0");
+    width: 100%;
+    @include dFlex(row, wrap, space-between, center);
+    padding: .3rem 0;
+  }
+  &__line {
+    height: 2px;
+    width: 100%;
+    background-color: getColor("black-50");
+    position: relative;
+    cursor: pointer;
+    display: block;
+
+    &-elapsed{
+      background-color: getColor("white");
+      height: 2px;
+      position: absolute;
+      z-index: 20;
+      display: block;
+    }
+  }
+
+
+  &__audio {
+    grid-area: audio;
+
+    &-buttons{
+        @include dFlex(row,wrap,center,center);
+        gap: .5rem;
+        height: 100%;
+    }
+  }
+}
+
+.btn-like,
+.btn-audio {
+  background-color: transparent;
+  color: getColor("green");
+  font-size: getSize("3");
+}
+
+
+.btn-audio{
+    color: getColor("white");
+}

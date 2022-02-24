@@ -1,0 +1,79 @@
+<div class="media-player">
+    <div class="media-player__wrapper">
+
+        <div class="media-player__artist-center">
+            <ng-container *ngTemplateOutlet="artistZone"></ng-container>
+        </div>
+
+        <div class="media-player__controls">
+            <ng-container *ngTemplateOutlet="controlsZone"></ng-container>
+        </div>
+
+        <div class="media-player__audio">
+            <ng-container *ngTemplateOutlet="audioZone"></ng-container>
+        </div>
+
+    </div>
+</div>
+
+
+
+<ng-template #artistZone>
+    <div class="media-player__artist-track" *ngIf="multimediaService.trackInfo$ | async as mockCover">
+        <img [src]="mockCover.cover" alt="" class="media-player__artist-cover">
+        <div class="media-player__artist-info">
+            <h3 class="media-player__artist-title">{{mockCover.name}}</h3>
+            <h3 class="media-player__artist-subtitle">{{mockCover.name}}</h3>
+        </div>
+        <div class="media-player__artist-buttons">
+            <button class="btn-like">
+                <i class="uil uil-heart"></i>
+            </button>
+        </div>
+    </div>
+</ng-template>
+
+
+<ng-template #controlsZone>
+    <div class="media-player__controls-inside">
+        <div class="media-player__controls-buttons">
+            <button class="arrow-btn">
+                <i class="uil uil-previous"></i>
+            </button>
+            <button (click)="multimediaService.togglePlayer()" class="play-btn">
+                <i [ngClass]="{
+                    'uil-play-circle':state === 'paused',
+                    'uil-pause-circle':state !== 'paused'
+                }" class="uil"></i>
+            </button>
+            <button class="arrow-btn">
+                <i class="uil uil-step-forward"></i>
+            </button>
+        </div>
+
+        <div class="media-player__linetime">
+            <span #progressBar (click)="handlePosition($event)" class="media-player__line"><span class="media-player__line-elapsed" [style.width]="(multimediaService.playerPercentage$ | async)+'%'"></span>
+            </span>
+            <div class="media-player__time">
+                <p class="media-player__time-start">{{ multimediaService.timeElapsed$ | async }}</p>
+                <p class="media-player__time-end">{{ multimediaService.timeRemaining$ | async }}</p>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #audioZone>
+
+    <div class="media-player__audio-buttons">
+        <button class="btn-audio">
+            <i class="uil uil-list-ui-alt"></i>
+        </button>
+        <button class="btn-audio">
+            <i class="uil uil-boombox"></i>
+        </button>
+        <button class="btn-audio">
+            <i class="uil uil-volume-off"></i>
+        </button>
+    </div>
+
+</ng-template>

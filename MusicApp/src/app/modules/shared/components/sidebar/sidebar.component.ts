@@ -4,8 +4,7 @@ import { mainMenu } from '../../../../core/interfaces/sidebar.interface';
 
 @Component({
   selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+  templateUrl: './sidebar.component.html'
 })
 export class SidebarComponent implements OnInit {
 
@@ -24,12 +23,12 @@ export class SidebarComponent implements OnInit {
       {
         name: 'Home',
         icon: 'uil uil-estate',
-        router: ['/', '']
+        router: ['/', 'tracks']
       },
       {
         name: 'Buscar',
         icon: 'uil uil-search',
-        router: ['/', 'history']
+        router: ['/', 'search']
       },
       {
         name: 'Tu biblioteca',

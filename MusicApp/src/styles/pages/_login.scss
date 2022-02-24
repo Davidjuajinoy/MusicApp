@@ -1,0 +1,131 @@
+@use "../abstracts/index" as *;
+
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: getColor("black-100");
+  color: getColor("black-100");
+  &-wrapper {
+    width: 100%;
+    height: 100%;
+    // @include dFlex(column, wrap, center, center);
+
+    &__image {
+      font-size: getSize("6");
+      //   color: getColor("green");
+      padding: 2rem;
+      height: 25vh;
+      @include dFlex(column, wrap, center, center);
+    }
+
+    &__icon {
+      background-color: getColor("white");
+      padding: 1.5rem;
+      border-radius: getRadius("icon");
+    }
+  }
+}
+
+.form-group {
+  width: 100%;
+}
+.form-login {
+  height: 75vh;
+  background-color: getColor("white");
+  width: 100%;
+  @include dGrid(1, 1rem, 5);
+  grid-template-areas: "title" "formgroup" "btn" "Errmsg" "link";
+  place-items: center;
+  padding: 1rem 0;
+  &--radius {
+    border-radius: 5rem 0 0 0;
+  }
+
+  &__title {
+    font-size: getSize("3");
+    text-align: center;
+    width: 100%;
+    grid-area: title;
+  }
+
+  &__group {
+    @include dFlex(column, wrap, center, flex-start);
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+    gap: 0.5rem;
+    position: relative;
+    grid-area: formgroup;
+
+    &--white {
+      margin-bottom: 0.5rem;
+      background-color: getColor("white");
+      box-shadow: getShadow("2");
+      border-radius: getRadius("3");
+    }
+  }
+
+  &__label {
+    font-size: getSize("1");
+    font-weight: bold;
+  }
+  &__input {
+    border: 2px solid transparent;
+    width: 100%;
+    padding: 0.5rem 0;
+    &:focus {
+      outline: none;
+    }
+
+    &.ng-invalid.ng-dirty,
+    &.ng-valid.ng-dirty {
+      transition: border 0.3s ease-out;
+      border-bottom: solid 2px red;
+    }
+
+    &.ng-valid.ng-dirty {
+      border-bottom: solid 2px getColor("green");
+    }
+  }
+
+  &__error-message {
+    width: 80%;
+    text-align: center;
+    grid-area: Errmsg;
+    color: red;
+  }
+
+  &__steps {
+    grid-area: link;
+    text-align: center;
+  }
+  &__link {
+    color: getColor("black-100");
+    text-decoration: none;
+    &:hover {
+      color: getColor("green");
+    }
+  }
+
+  &__submit {
+    margin-top: 0.5rem;
+    width: 80%;
+  }
+}
+
+.btn-login {
+  font-size: getSize("1");
+  border-radius: getRadius("1");
+  background-color: getColor("black-100");
+  padding: 1rem;
+  color: getColor("white");
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: getShadow("1");
+
+  &:disabled{
+    opacity: .7;
+    cursor: default;
+  }
+}

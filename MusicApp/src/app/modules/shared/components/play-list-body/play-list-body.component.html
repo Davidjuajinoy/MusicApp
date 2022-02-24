@@ -1,0 +1,36 @@
+<div class="play-list-body">
+    <ul class="play-list__table-header">
+        <li (click)="changeSort('name')">Nombre </li>
+        <li (click)="changeSort('album')">álbum</li>
+        <li>fecha</li>
+        <li><i class="uil uil-clock-eight"></i></li>
+    </ul>
+    <ul class="play-list__table-body" *ngFor="let track of tracks |orderList:optionSort.property:optionSort.order">
+        <li class="track-name">
+            <ng-container *ngTemplateOutlet="coverSection;context:{track:track}"></ng-container>
+        </li>
+        <li class="track-name-opacity">
+            {{track.album}}
+        </li>
+        <li class="track-name-opacity">
+            {{track.album}}
+        </li>
+        <li class="track-name-opacity">
+            {{track.album}}
+        </li>
+
+    </ul>
+</div>
+
+<!--template del cover-->
+<ng-template #coverSection let-track="track">
+
+    <div class="cover-section">
+        <img appImgBroken class="cover-track" [src]="track.cover" [alt]="track.name">
+        <div class="cover-info">
+            <div class="cover-info__name">{{track.name}}</div>
+            <div class="cover-info__name--details">{{track.artist.name}}</div>
+        </div>
+    </div>
+
+</ng-template>

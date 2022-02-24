@@ -1,0 +1,45 @@
+@use "../abstracts/index" as *;
+.play-list-header {
+  @include dFlex(row, wrap, center, center);
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  background-color: #ffffff14;
+}
+
+.cover {
+  background-color: getColor("black-50");
+  width: 30%;
+  height: 6rem;
+  position: relative;
+  box-shadow: getShadow("1");
+  &-mock {
+    position: absolute;
+    font-size: getSize("6");
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: getColor("white");
+  }
+}
+.content-text {
+  padding: 0 1rem;
+  width: 70%;
+  @include dFlex(column, wrap, center, flex-start);
+  color: getColor("white");
+
+  &--small {
+    text-transform: uppercase;
+  }
+  &--title {
+    font-size: getSize("3");
+  }
+
+  &--subtitle {
+    font-size: getSize("0");
+  }
+
+  &--strong {
+    opacity: 0.7;
+  }
+}

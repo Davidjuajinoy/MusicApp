@@ -1,0 +1,30 @@
+@use "../abstracts/index" as *;
+.section-generic {
+  @include dFlex(column, wrap, center, center);
+  width: 100%;
+  &__title {
+    font-size: getSize("2");
+    font-weight: bold;
+    color: getColor("white");
+    padding: getSize("2") 0;
+  }
+
+  &__player--zone {
+    width: 100%;
+  }
+
+  &__player-list--small {
+    height: 100%;
+    // @include dGrid(2, 1rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: 1rem;
+  }
+  &__player-list--big {
+    height: 100%;
+    display: grid;
+    gap: 1rem;
+
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  }
+}

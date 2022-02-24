@@ -5,10 +5,11 @@
   align-items: $align;
 }
 
-@mixin dGrid($columns, $space) {
+@mixin dGrid($columns, $space,$rows:1) {
   display: grid;
   grid-template-columns: repeat($columns, 1fr);
   gap: $space;
+  grid-template-rows:repeat($rows,1fr);
 
   //   @media screen and (max-width:480px) {
   //       grid-template-columns: 1fr;
