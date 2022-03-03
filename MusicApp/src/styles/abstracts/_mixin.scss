@@ -10,15 +10,10 @@
   grid-template-columns: repeat($columns, 1fr);
   gap: $space;
   grid-template-rows:repeat($rows,1fr);
-
-  //   @media screen and (max-width:480px) {
-  //       grid-template-columns: 1fr;
-  //       gap: 0;
-  //   }
 }
 
 @mixin mQ($medida: 480px) {
-  @media screen and (max-width: $medida) {
+  @media screen and (min-width: $medida) {
     @content;
   }
 }

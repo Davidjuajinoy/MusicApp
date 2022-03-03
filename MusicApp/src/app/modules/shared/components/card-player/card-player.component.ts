@@ -8,7 +8,11 @@ import { MultimediaService } from '../../services/multimedia.service';
 })
 export class CardPlayerComponent implements OnInit {
 
-  @Input() track !: trackModel;
+  @Input() track: trackModel = {
+    _id: 0, name: '', album: '', url: '', cover: '',
+    artist: { name: '', nickname: '', nationality: '' },
+    duration: { end: 0, start: 0 }
+  };
   @Input() mode!: 'big' | 'small';
   constructor(private multimediaService: MultimediaService) { }
 

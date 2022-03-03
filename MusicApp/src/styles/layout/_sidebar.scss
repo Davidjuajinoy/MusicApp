@@ -9,12 +9,31 @@
   position: fixed;
   z-index: 10;
   transition: transform getAnimation("sidebar") ease-out;
-  &__close {
-    @include dFlex(row, wrap, center, center);
-    gap: 10px;
-    padding: 1rem 0;
-    &-title {
+  @include mQ(680px){
+    width: 30vw;
+  }
+
+
+  &__icon {
+      
       font-size: getSize("3");
+      box-shadow: getShadow("2");
+      border-radius: 50%;
+      background-color: getColor("black-100");
+      cursor: pointer;
+
+      &--big{
+        font-size: getSize("5")
+      }
+    
+  }
+  
+  &__close {
+    @include dFlex(row, wrap, space-between, center);
+    padding: 1rem 0;
+    width: 100%;
+    &-title {
+      font-size: 1.6rem;
 
       /* Efect typing */
       position: relative;
@@ -32,14 +51,7 @@
       }
           /* Efect typing */
     }
-    &-icon {
-      order: 1;
-      font-size: getSize("3");
-      box-shadow: getShadow("2");
-      border-radius: 50%;
-      background-color: getColor("black-100");
-      cursor: pointer;
-    }
+ 
   }
   &__separator {
     width: 100%;
@@ -50,10 +62,16 @@
   &__wrapper {
     @include dFlex(row, wrap, flex-start, center);
     padding: 1rem 0;
-    gap: 1rem;
+    width: 100%;
+    cursor: pointer;
 
     & .uil {
       font-size: getSize("3");
+      width: 20%;
+    }
+
+    .sidebar__label{
+      width: 80%;
     }
   }
 

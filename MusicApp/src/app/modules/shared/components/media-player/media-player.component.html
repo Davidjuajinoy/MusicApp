@@ -1,4 +1,4 @@
-<div class="media-player">
+<section class="media-player">
     <div class="media-player__wrapper">
 
         <div class="media-player__artist-center">
@@ -14,7 +14,7 @@
         </div>
 
     </div>
-</div>
+</section>
 
 
 
@@ -23,7 +23,7 @@
         <img [src]="mockCover.cover" alt="" class="media-player__artist-cover">
         <div class="media-player__artist-info">
             <h3 class="media-player__artist-title">{{mockCover.name}}</h3>
-            <h3 class="media-player__artist-subtitle">{{mockCover.name}}</h3>
+            <h3 class="media-player__artist-subtitle">{{mockCover.album}}</h3>
         </div>
         <div class="media-player__artist-buttons">
             <button class="btn-like">
@@ -72,8 +72,9 @@
             <i class="uil uil-boombox"></i>
         </button>
         <button class="btn-audio">
-            <i class="uil uil-volume-off"></i>
+            <i class="uil" [ngClass]="{'uil-volume': audioState === false, 'uil-volume-mute':audioState ===true }" (click)="mutedAudio()"></i>
         </button>
+
     </div>
 
 </ng-template>

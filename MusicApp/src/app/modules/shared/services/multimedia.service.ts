@@ -126,4 +126,11 @@ export class MultimediaService {
     }
     (this.audio.paused) ? this.audio.play() : this.audio.pause()
   }
+
+  public toggleMuted():boolean{
+    console.log(this.audio.muted);
+    
+    (this.audio.muted == false) ? this.audio.muted=true : this.audio.muted=false;
+    return this.audio.muted;
+  }
 }

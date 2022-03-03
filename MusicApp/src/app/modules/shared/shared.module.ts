@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { PlayListBodyComponent } from './components/play-list-body/play-list-body.component';
 import { OrderListPipe } from './pipes/order-list.pipe';
 import { PlayListHeaderComponent } from './components/play-list-header/play-list-header.component';
+import { ImgBrokenDirective } from './directives/img-broken.directive';
 
 
 
@@ -19,7 +20,8 @@ import { PlayListHeaderComponent } from './components/play-list-header/play-list
     MediaPlayerComponent,
     PlayListBodyComponent,
     OrderListPipe,
-    PlayListHeaderComponent
+    PlayListHeaderComponent,
+    ImgBrokenDirective
   ],
   imports: [
     CommonModule,

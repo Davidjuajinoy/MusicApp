@@ -1,10 +1,14 @@
 <div [ngClass]="{'card-player--small':mode ==='small','card-player--big':mode ==='big'}" class="card-player">
-    <img [src]="track.cover" [alt]="track.name" class="card-player__cover">
-    <div class="card-player__body">
+    <img appImgBroken
+    [ngClass]="{'card-player__cover--small':mode ==='small'}"
+    [src]="track.cover" [alt]="track.name" class="card-player__cover">
+    <div [ngClass]="{'card-player__body--small':mode ==='small'}" class="card-player__body">
         <p class="card-player__title">{{track.name}}</p>
         <p *ngIf="mode ==='big'" class="card-player__subtitle">{{track.name}}</p>
     </div>
-    <div class="buttons-player">
+    <div
+    [ngClass]="{'buttons-player--small':mode ==='small'}"
+    class="buttons-player ">
         <button class="btn-play" (click)="SendTrack(track)">
             <i class="uil uil-play"></i>
         </button>

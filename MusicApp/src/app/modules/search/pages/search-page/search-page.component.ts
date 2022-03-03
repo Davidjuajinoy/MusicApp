@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { trackModel } from '@core/models/track.model';
 import { Observable, of } from 'rxjs';
 import { SearchService } from '../../services/search.service';
 

@@ -15,10 +15,13 @@
 
   &__player-list--small {
     height: 100%;
-    // @include dGrid(2, 1rem);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
     gap: 1rem;
+
+    @include mQ(680px) {
+      grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    }
   }
   &__player-list--big {
     height: 100%;

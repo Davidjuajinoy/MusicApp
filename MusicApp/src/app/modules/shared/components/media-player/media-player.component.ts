@@ -10,8 +10,8 @@ export class MediaPlayerComponent implements OnInit, OnDestroy {
 
   listObserves$: Subscription[] = [];
   state: string = 'paused';
-
-  @ViewChild('progressBar') progressBar : ElementRef = new ElementRef('');
+  audioState: boolean = false;
+  @ViewChild('progressBar') progressBar: ElementRef = new ElementRef('');
 
   constructor(public multimediaService: MultimediaService) { }
 
@@ -26,18 +26,21 @@ export class MediaPlayerComponent implements OnInit, OnDestroy {
     this.listObserves$ = [observer1$];
   }
 
-  handlePosition(event:MouseEvent){
-    const elNative : HTMLElement = this.progressBar.nativeElement;
-    const {clientX} = event;
-    const {x , width} = elNative.getBoundingClientRect();
+  handlePosition(event: MouseEvent) {
+    const elNative: HTMLElement = this.progressBar.nativeElement;
+    const { clientX } = event;
+    const { x, width } = elNative.getBoundingClientRect();
     const clickX = clientX;
-    const percentageFromX= (clickX * 100) / width;
-    // console.log);
+    const percentageFromX = (clickX * 100) / width;
     this.multimediaService.seekAudio(percentageFromX);
     console.log(event);
-    
-    
-  } 
+
+
+  }
+
+  mutedAudio() {
+    this.audioState = this.multimediaService.toggleMuted();
+  }
 
   ngOnDestroy(): void {
     this.listObserves$.forEach((o) => {
